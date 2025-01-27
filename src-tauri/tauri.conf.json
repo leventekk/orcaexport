@@ -12,7 +12,11 @@
   "app": {
     "windows": [
       {
-        "title": "orcaexport",
+        "title": "OrcaExport",
+        "resizable": false,
+        "center": true,
+        "dragDropEnabled": false,
+        "maximizable": false,
         "width": 800,
         "height": 600
       }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { readDir, BaseDirectory, DirEntry } from "@tauri-apps/plugin-fs";
 import { configDir, join } from "@tauri-apps/api/path";
 
@@ -55,7 +55,7 @@ function expandPath(...paths: string[]) {
 export function useDefinitions() {
 	const [definitions, setDefinitions] = useState<FileDefinition[]>([]);
 
-	async function collect() {
+	const collect = useCallback(async () => {
 		const [machines, filaments] = await Promise.all(
 			SETTING_DIRECTORIES.map(
 				async (dir) =>
@@ -66,7 +66,7 @@ export function useDefinitions() {
 			),
 		);
 
-    // TODO: refactor this path and move tot he collection step
+		// TODO: refactor this path and move tot he collection step
 		const configDirPath = await configDir();
 		const [machinesPath, filamentsPath] = await Promise.all(
 			SETTING_DIRECTORIES.map((directory) =>
@@ -81,6 +81,7 @@ export function useDefinitions() {
 				entries: machines
 					.filter(filterEntry)
 					.reduce(filterUnique, [])
+					.sort((a, b) => a.name.localeCompare(b.name))
 					.map(expandPath(machinesPath)),
 			},
 			{
@@ -89,14 +90,15 @@ export function useDefinitions() {
 				entries: filaments
 					.filter(filterEntry)
 					.reduce(filterUnique, [])
+					.sort((a, b) => a.name.localeCompare(b.name))
 					.map(expandPath(filamentsPath)),
 			},
 		]);
-	}
+	}, [setDefinitions]);
 
 	useEffect(() => {
 		void collect();
-	}, []);
+	}, [collect]);
 
 	return { definitions } as const;
 }

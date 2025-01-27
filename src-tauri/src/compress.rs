@@ -3,18 +3,20 @@ use std::io::{self, Read, Write};
 use std::path::{Path, PathBuf};
 use zip::{write::SimpleFileOptions, ZipWriter};
 
-#[tauri::command]
-pub fn export_files(name: String, files: Vec<String>) -> Result<(), String> {
-    println!("Compressing files... {:?}", files);
+// TODO: better error handling
 
-    let zip_file_path = Path::new(&name);
-    let zip_file = File::create(&zip_file_path).map_err(|err| err.to_string())?;
+#[tauri::command]
+pub fn export_files(path_to_export: String, files_to_export: Vec<String>) -> Result<(), String> {
+    let zip_file_path = Path::new(&path_to_export);
+    let zip_file = File::create(zip_file_path).map_err(|err| err.to_string())?;
+
     let mut zip = ZipWriter::new(zip_file);
 
     let options = SimpleFileOptions::default()
         .compression_method(zip::CompressionMethod::Deflated)
         .unix_permissions(0o755);
-    for name in files {
+
+    for name in files_to_export {
         let file_path = PathBuf::from(name);
         let file = File::open(&file_path).map_err(|err| err.to_string())?;
 
@@ -31,8 +33,6 @@ pub fn export_files(name: String, files: Vec<String>) -> Result<(), String> {
     }
 
     zip.finish().map_err(|err| err.to_string())?;
-
-    println!("Files compressed successfully to {:?}", zip_file_path);
 
     Ok(())
 }

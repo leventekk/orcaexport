@@ -2,39 +2,45 @@ import { Toaster } from "react-hot-toast";
 import "./App.css";
 import { useDefinitions } from "./hooks/use-definitions";
 import { useExport } from "./hooks/use-export";
+import { Header } from "./components/Header/Header";
+import { DefinitionList } from "./components/DefinitionList/DefinitionList";
+import { Accordion } from "./components/Accordion/Accordion";
+import { Button } from "./components/Button/Button";
+import { EmptyState } from "./components/EmptyState/EmptyState";
 
 function App() {
 	const { definitions } = useDefinitions();
 	const { handleExport } = useExport();
 
 	return (
-		<main className="container">
-			<h1>OrcaExport</h1>
+		<div className="container">
+			<Header />
 
-			<div className="content">
+			<main>
 				{definitions.map(({ title, type, entries }) => (
-					<form key={title} onSubmit={handleExport}>
-						<input type="hidden" name="type" value={type} />
-						<details className="row">
-							<summary>{title}</summary>
-							<ul>
-								{entries.map(({ name, path }) => (
-									<li key={name}>
-										<label>
-											<input type="checkbox" name="file[]" value={path} />
-											<span>{name}</span>
-										</label>
-									</li>
-								))}
-							</ul>
+					<Accordion key={title} title={title}>
+						{entries.length === 0 ? (
+							<EmptyState />
+						) : (
+							<>
+								<form onSubmit={handleExport}>
+									<input type="hidden" name="type" value={type} />
+									<DefinitionList entries={entries} />
 
-							<button>export it!</button>
-						</details>
-					</form>
+									<div className="button-footer">
+										<Button type="reset" variant="danger">
+											Reset
+										</Button>
+										<Button type="submit">Export</Button>
+									</div>
+								</form>
+							</>
+						)}
+					</Accordion>
 				))}
-			</div>
-			<Toaster position="bottom-right" />
-		</main>
+				<Toaster position="bottom-right" />
+			</main>
+		</div>
 	);
 }
 
