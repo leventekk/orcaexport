@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      changelog: ${{ steps.update-changelog.changelog.outputs.changes }}
     steps:
       - uses: actions/checkout@v4
       - name: Update CHANGELOG
@@ -56,6 +58,6 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: ${{ github.ref_name }}
-          releaseBody: ${{ needs.update-changelog.changelog.outputs.changes }}
+          releaseBody: ${{ needs.update-changelog.outputs.changes }}
           includeDebug: true
           args: ${{ matrix.args }}

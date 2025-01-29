@@ -1,23 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 import { readDir, BaseDirectory, DirEntry } from "@tauri-apps/plugin-fs";
 import { configDir, join } from "@tauri-apps/api/path";
+import { ConfigType } from "../utils/to-config-type";
 
 interface FileEntry {
 	name: string;
 	path: string;
 }
 
-type Folder = "machine" | "filament";
-
 interface FileDefinition {
 	title: string;
-	type: Folder;
+	type: ConfigType;
 	entries: FileEntry[];
 }
 
 const USER_PATH = "OrcaSlicer/user/default";
 
-const SETTING_DIRECTORIES: Folder[] = ["machine", "filament"];
+const SETTING_DIRECTORIES: ConfigType[] = ["machine", "filament"];
 
 function filterEntry(entry: DirEntry) {
 	return entry.isFile && entry.name.endsWith(".json");
@@ -66,7 +65,7 @@ export function useDefinitions() {
 			),
 		);
 
-		// TODO: refactor this path and move tot he collection step
+		// TODO: refactor this path and move to the collection step
 		const configDirPath = await configDir();
 		const [machinesPath, filamentsPath] = await Promise.all(
 			SETTING_DIRECTORIES.map((directory) =>
