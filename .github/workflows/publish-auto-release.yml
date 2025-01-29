@@ -63,5 +63,4 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: ${{ github.ref_name }}
-          includeDebug: true
           args: ${{ matrix.args }}
