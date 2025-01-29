@@ -32,7 +32,7 @@ rm -f package.json.bak
 git add package.json
 git commit -m "chore: bump version to $new_version"
 
-git tag "v$new_version"
+git tag "v$new_version" -m "Release v$new_version"
 
 git push origin main
 git push origin "v$new_version"
