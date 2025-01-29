@@ -26,10 +26,11 @@ if ! validate_version "$new_version"; then
 fi
 
 sed -i.bak -E "s/\"version\": *\"[0-9]+\.[0-9]+\.[0-9]+\"/\"version\": \"$new_version\"/" package.json
+sed -i.bak -E "s/^version = \"[0-9]+\.[0-9]+\.[0-9]+\"/version = \"$new_version\"/" ./src-tauri/Cargo.toml
 
-rm -f package.json.bak
+rm -f package.json.bak ./src-tauri/Cargo.toml.bak
 
-git add package.json
+git add package.json ./src-tauri/Cargo.toml
 git commit -m "chore: bump version to $new_version"
 
 git tag "v$new_version" -m "Release v$new_version"

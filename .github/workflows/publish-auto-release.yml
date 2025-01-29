@@ -6,10 +6,6 @@ on:
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      changelog: ${{ steps.update-changelog.changelog.outputs.changes }}
     steps:
       - uses: actions/checkout@v4
       - name: Update CHANGELOG
@@ -18,6 +14,15 @@ jobs:
         with:
           token: ${{ github.token }}
           tag: ${{ github.ref_name }}
+      - name: Create Release
+        uses: ncipollo/release-action@v1.15.0
+        with:
+          allowUpdates: true
+          draft: false
+          makeLatest: true
+          name: ${{ github.ref_name }}
+          body: ${{ steps.changelog.outputs.changes }}
+          token: ${{ github.token }}
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -58,6 +63,5 @@ jobs:
         with:
           tagName: ${{ github.ref_name }}
           releaseName: ${{ github.ref_name }}
-          releaseBody: ${{ needs.update-changelog.outputs.changes }}
           includeDebug: true
           args: ${{ matrix.args }}
