@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -18,8 +18,19 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@feature/*": [ "src/features/*" ],
+      "@component/*": [ "src/components/*" ],
+      "@page/*": [ "src/pages/*" ],
+      "@util/*": [ "src/utils/*" ]
+    }
+
+
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [ "src", "types" ],
+  "references": [ { "path": "./tsconfig.node.json" } ]
 }

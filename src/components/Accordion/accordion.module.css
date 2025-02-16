@@ -24,4 +24,8 @@
       display: none;
     }
   }
+
+  .highlighted {
+    background: var(--color-neutral-200);
+  }
 }

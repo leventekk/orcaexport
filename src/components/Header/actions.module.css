@@ -1,0 +1,41 @@
+@layer components {
+  .root {
+    position: relative;
+    display: flex;
+
+    &:has(input:checked) .popup {
+      display: flex;
+    }
+  }
+
+  .input {
+    display: none;
+  }
+
+  .popup {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    width: 18rem;
+    padding: 1rem;
+    border-radius: .75rem;
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, .2);
+  }
+
+  .icon {
+    border: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: none;
+    color: #fff;
+    transition: opacity ease-in 300ms;
+
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

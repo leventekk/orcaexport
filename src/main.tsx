@@ -1,9 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App";
+import { ExporterProvider } from "./features/Exporter/Provider";
+import { DefinitionsProvider } from "./features/Definitions/Provider";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+createRoot(document.getElementById("root") as HTMLElement).render(
+	<StrictMode>
+		<DefinitionsProvider>
+			<ExporterProvider>
+				<App />
+			</ExporterProvider>
+		</DefinitionsProvider>
+	</StrictMode>,
 );

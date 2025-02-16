@@ -2,11 +2,13 @@
   .root {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 2rem;
     background-color: var(--color-neutral-800);
     position: sticky;
     top: 0;
     z-index: 1;
+    height: 4.75rem;
 
     h1 {
       margin-block-start: 0;

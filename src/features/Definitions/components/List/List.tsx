@@ -1,8 +1,6 @@
 import { useCallback } from "react";
 import cn from "classnames";
-import { useExporter } from "../../features/Exporter/hooks/use-exporter";
-import styles from "./definition-list.module.css";
-import { ConfigType } from "../../utils/to-config-type";
+import styles from "./list.module.css";
 
 interface FileEntry {
 	name: string;
@@ -12,22 +10,23 @@ interface FileEntry {
 
 interface Props {
 	entries: FileEntry[];
-	type: ConfigType;
+
+	onAdd: (entry: FileEntry) => void;
+	onRemove: (entry: FileEntry) => void;
 }
 
-export function DefinitionList(props: Props) {
-	const { entries, type } = props;
-	const { addFile, removeFile } = useExporter();
+export function List(props: Props) {
+	const { entries, onAdd, onRemove } = props;
 
 	const handleChange = useCallback(
 		(entry: FileEntry) => () => {
 			if (entry.selected) {
-				removeFile({ ...entry, type });
+				onRemove(entry);
 			} else {
-				addFile({ ...entry, type });
+				onAdd(entry);
 			}
 		},
-		[addFile, removeFile, type],
+		[onAdd, onRemove],
 	);
 
 	return (
