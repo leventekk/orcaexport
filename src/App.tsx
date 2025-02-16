@@ -10,6 +10,7 @@ function App() {
 
 			<main>
 				<Home />
+
 				<Toaster position="bottom-right" />
 			</main>
 		</div>

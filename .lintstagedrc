@@ -1,0 +1,3 @@
+{
+  "*.{ts,tsx,css}": "bunx biome check --write"
+}
