@@ -1,0 +1,29 @@
+@layer components {
+	.root {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.button {
+		padding: 0.5rem 1.5rem;
+		cursor: pointer;
+		position: relative;
+		display: block;
+		transition: background-color .2s, padding-inline-start .2s;
+		appearance: none;
+		border: none;
+		background: none;
+		width: 100%;
+		text-align: left;
+
+		&:hover {
+			background-color: var(--color-neutral-200);
+		}
+	}
+
+	.selected {
+		padding-inline-start: 1.25rem;
+		background-color: var(--color-neutral-300);
+	}
+}

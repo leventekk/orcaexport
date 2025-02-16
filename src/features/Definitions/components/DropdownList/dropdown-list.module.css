@@ -1,0 +1,48 @@
+@layer components {
+	.list {
+		margin: 0;
+	}
+
+	.root {
+		overflow: auto;
+		max-height: 200px;
+		min-height: 100px;
+		overscroll-behavior: contain;
+	}
+
+	.title {
+		font-weight: 600;
+	}
+
+	.entry {
+		margin-inline-start: 0.5rem;
+
+		+ & {
+			border-top: 1px solid rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.remove {
+		display: block;
+		border: none;
+		padding-block: 0.5rem;
+		background: none;
+		transition: background 300ms;
+		width: 100%;
+		text-align: left;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	.footer {
+		margin-block-start: 1rem;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.feedback {
+		text-align: center;
+	}
+}
