@@ -1,4 +1,4 @@
-import { ExporterAction, ExporterState } from "./context";
+import type { ExporterAction, ExporterState } from "./context";
 
 export function exporterReducer(
 	state: ExporterState,
@@ -7,13 +7,14 @@ export function exporterReducer(
 	switch (action.type) {
 		case "ADD_FILE":
 			return { ...state, files: [...state.files, action.payload.file] };
-		case "REMOVE_FILE":
+		case "REMOVE_FILE": {
 			const { file } = action.payload;
 
 			return {
 				...state,
 				files: state.files.filter((f) => f.name !== file.name),
 			};
+		}
 		case "RESET":
 			return {
 				...state,

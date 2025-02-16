@@ -1,4 +1,4 @@
-import { DirEntry } from "@tauri-apps/plugin-fs";
+import type { DirEntry } from "@tauri-apps/plugin-fs";
 
 export function removeExtension(name: string) {
 	const parts = name.split(".");
@@ -11,11 +11,8 @@ export function removeExtension(name: string) {
 }
 
 export function expandPath(...paths: string[]) {
-	return function (entry: DirEntry) {
-		return {
-			name: removeExtension(entry.name),
-			path: [...paths, entry.name].join("/"),
-		};
-	};
+	return (entry: DirEntry) => ({
+		name: removeExtension(entry.name),
+		path: [...paths, entry.name].join("/"),
+	});
 }
-

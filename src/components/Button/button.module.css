@@ -1,25 +1,24 @@
 @layer components {
-  .root {
-    border: 0;
-    border-radius: 6px;
-    padding: 0.75rem 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.2s;
+	.root {
+		border: 0;
+		border-radius: 6px;
+		padding: 0.75rem 1rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: opacity 0.2s;
 
-    &:hover {
-      opacity: 0.9
-    }
-  }
+		&:hover {
+			opacity: 0.9;
+		}
+	}
 
-  .danger {
-    background-color: var(--color-red-400);
-    color: var(--color-neutral-50);
-  }
+	.danger {
+		background-color: var(--color-red-400);
+		color: var(--color-neutral-50);
+	}
 
-  .primary {
-    background-color: var(--color-primary);
-    color: var(--color-neutral-50);
-
-  }
+	.primary {
+		background-color: var(--color-primary);
+		color: var(--color-neutral-50);
+	}
 }

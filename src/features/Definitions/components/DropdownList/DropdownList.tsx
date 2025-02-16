@@ -1,7 +1,7 @@
-import { useDropdownList } from "@feature/Definitions/hooks/use-dropdown-list";
-import styles from "./dropdown-list.module.css";
-import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import { Button } from "@component/Button/Button";
+import { useDropdownList } from "@feature/Definitions/hooks/use-dropdown-list";
+import { useExporter } from "@feature/Exporter/hooks/use-exporter";
+import styles from "./dropdown-list.module.css";
 
 interface Props {
 	onClose: () => void;
@@ -26,6 +26,7 @@ export function DropdownList(props: Props) {
 						{entries.map((entry) => (
 							<dd className={styles.entry} key={entry.path}>
 								<button
+									type="button"
 									className={styles.remove}
 									onClick={() => removeFile(entry)}
 								>

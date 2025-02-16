@@ -1,7 +1,7 @@
-import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import { Accordion } from "@component/Accordion/Accordion";
 import { EmptyState } from "@component/EmptyState/EmptyState";
 import { List as DefinitionList } from "@feature/Definitions/components/List/List";
+import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import { useHome } from "./hooks/use-home";
 
 export function Home() {

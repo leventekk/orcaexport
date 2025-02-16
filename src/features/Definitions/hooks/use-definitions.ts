@@ -1,11 +1,11 @@
-import { useCallback, useContext, useMemo } from "react";
-import { readDir } from "@tauri-apps/plugin-fs";
 import { BaseDirectory, configDir, join } from "@tauri-apps/api/path";
-import { DefinitionsContext, FileEntry } from "../context";
-import { DEFINITION_FOLDERS, DEFAULT_PROFILE_PATH } from "../config";
+import { readDir } from "@tauri-apps/plugin-fs";
+import { toConfigType } from "@util/to-config-type";
+import { useCallback, useContext, useMemo } from "react";
+import { DEFAULT_PROFILE_PATH, DEFINITION_FOLDERS } from "../config";
+import { DefinitionsContext, type FileEntry } from "../context";
 import { filterEntry, filterUnique } from "../utils/filters";
 import { removeExtension } from "../utils/path";
-import { toConfigType } from "@util/to-config-type";
 
 export function useDefinitions() {
 	const { state, dispatch } = useContext(DefinitionsContext);
@@ -50,7 +50,7 @@ export function useDefinitions() {
 		dispatch({ type: "SYNC", payload: { files: collection } });
 
 		return collection;
-	}, []);
+	}, [dispatch]);
 
 	return {
 		files,

@@ -1,5 +1,5 @@
-import { createContext, Dispatch } from "react";
-import { ConfigType } from "../../utils/to-config-type";
+import { type Dispatch, createContext } from "react";
+import type { ConfigType } from "../../utils/to-config-type";
 
 export interface FileEntry {
 	name: string;

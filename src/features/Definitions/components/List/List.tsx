@@ -1,25 +1,24 @@
-import { useCallback } from "react";
 import cn from "classnames";
+import { useCallback } from "react";
+import type { FileEntry } from "../../context";
 import styles from "./list.module.css";
 
-interface FileEntry {
-	name: string;
-	path: string;
+interface StatefulFileEntry extends Omit<FileEntry, "type"> {
 	selected: boolean;
 }
 
 interface Props {
-	entries: FileEntry[];
+	entries: StatefulFileEntry[];
 
-	onAdd: (entry: FileEntry) => void;
-	onRemove: (entry: FileEntry) => void;
+	onAdd: (entry: StatefulFileEntry) => void;
+	onRemove: (entry: StatefulFileEntry) => void;
 }
 
 export function List(props: Props) {
 	const { entries, onAdd, onRemove } = props;
 
 	const handleChange = useCallback(
-		(entry: FileEntry) => () => {
+		(entry: StatefulFileEntry) => () => {
 			if (entry.selected) {
 				onRemove(entry);
 			} else {
@@ -34,6 +33,7 @@ export function List(props: Props) {
 			{entries.map((entry) => (
 				<li key={entry.name}>
 					<button
+						type="button"
 						onClick={handleChange(entry)}
 						className={cn(styles.button, {
 							[styles.selected]: entry.selected,

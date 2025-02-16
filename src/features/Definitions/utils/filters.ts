@@ -1,4 +1,4 @@
-import { type DirEntry } from "@tauri-apps/plugin-fs";
+import type { DirEntry } from "@tauri-apps/plugin-fs";
 
 export function filterEntry(entry: DirEntry) {
 	return entry.isFile && entry.name.endsWith(".json");

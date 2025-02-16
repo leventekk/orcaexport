@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useMemo } from "react";
-import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import { useDefinitions } from "@feature/Definitions/hooks/use-definitions";
-import { toConfigType } from "@util/to-config-type";
 import { formatTitle } from "@feature/Definitions/utils/format-title";
+import { useExporter } from "@feature/Exporter/hooks/use-exporter";
+import { toConfigType } from "@util/to-config-type";
+import { useCallback, useEffect, useMemo } from "react";
 
 export function useHome() {
 	const { files: definitions, collect } = useDefinitions();
 	const { files } = useExporter();
 
 	const hasSelected = useCallback(
-		<T extends unknown>(type: T) => files.some((f) => f.type === type),
+		<T>(type: T) => files.some((f) => f.type === type),
 		[files],
 	);
 
@@ -27,7 +27,7 @@ export function useHome() {
 					})),
 				};
 			}),
-		[files, definitions],
+		[files, definitions, hasSelected],
 	);
 
 	useEffect(() => {

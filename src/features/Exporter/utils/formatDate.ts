@@ -20,4 +20,3 @@ export function formatDate(date: Date) {
 		return acc + part.value;
 	}, "");
 }
-

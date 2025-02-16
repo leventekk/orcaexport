@@ -1,4 +1,4 @@
-import { DefinitionsActions, DefinitionsState } from "./context";
+import type { DefinitionsActions, DefinitionsState } from "./context";
 
 export function definitionsReducer(
 	state: DefinitionsState,

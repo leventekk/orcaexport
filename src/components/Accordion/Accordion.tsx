@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react";
-import styles from "./accordion.module.css";
 import cn from "classnames";
+import type { PropsWithChildren } from "react";
+import styles from "./accordion.module.css";
 
 interface Props {
 	title: string;
