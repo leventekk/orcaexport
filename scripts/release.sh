@@ -29,7 +29,7 @@ sed -i.bak -E "s/\"version\": *\"[0-9]+\.[0-9]+\.[0-9]+\"/\"version\": \"$new_ve
 sed -i.bak -E "s/\"version\": *\"[0-9]+\.[0-9]+\.[0-9]+\"/\"version\": \"$new_version\"/" ./src-tauri/tauri.conf.json
 sed -i.bak -E "s/^version = \"[0-9]+\.[0-9]+\.[0-9]+\"/version = \"$new_version\"/" ./src-tauri/Cargo.toml
 
-rm -f package.json.bak ./src-tauri/Cargo.toml.bak ./src-tauri/tauri.conf.json
+rm -f package.json.bak ./src-tauri/Cargo.toml.bak ./src-tauri/tauri.conf.json.bak
 
 git add package.json ./src-tauri/Cargo.toml ./src-tauri/tauri.conf.json
 git commit -m "chore: bump version to $new_version"
