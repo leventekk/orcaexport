@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.1] - 2025-02-16
+### :bug: Bug Fixes
+- [`ae0f4b7`](https://github.com/leventekk/orcaexport/commit/ae0f4b75660c449092caa78528c54ac4fd2ae46c) - **build**: fix aarch64 broken binary *(commit by [@leventekk](https://github.com/leventekk))*
+
+### :wrench: Chores
+- [`ffec82b`](https://github.com/leventekk/orcaexport/commit/ffec82b11fe52144117fface755d5edbeb9ca2e7) - bump version to 0.2.1 *(commit by [@leventekk](https://github.com/leventekk))*
+
+
 ## [v0.2.0] - 2025-02-16
 ### :bug: Bug Fixes
 - [`daa6b49`](https://github.com/leventekk/orcaexport/commit/daa6b49fbdca615f1249146928eb4d501c4cf657) - **ci**: add missing permission *(commit by [@leventekk](https://github.com/leventekk))*
@@ -58,3 +66,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.2.1]: https://github.com/leventekk/orcaexport/compare/v0.2.0...v0.2.1
 [v0.2.2]: https://github.com/leventekk/orcaexport/compare/v0.2.1...v0.2.2
 [v0.2.0]: https://github.com/leventekk/orcaexport/compare/v0.1.4...v0.2.0
+[v0.2.1]: https://github.com/leventekk/orcaexport/compare/v0.2.0...v0.2.1
