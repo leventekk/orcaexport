@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.0] - 2025-02-16
+### :bug: Bug Fixes
+- [`daa6b49`](https://github.com/leventekk/orcaexport/commit/daa6b49fbdca615f1249146928eb4d501c4cf657) - **ci**: add missing permission *(commit by [@leventekk](https://github.com/leventekk))*
+- [`ece8f60`](https://github.com/leventekk/orcaexport/commit/ece8f60f7346d1dc004cd61e5e1a053a47197194) - **app**: update versioning, add prevent plugin *(commit by [@leventekk](https://github.com/leventekk))*
+- [`e7d982b`](https://github.com/leventekk/orcaexport/commit/e7d982b0c310eceae3993f0fc5b522906685e85d) - add tauri.conf *(commit by [@leventekk](https://github.com/leventekk))*
+
+### :wrench: Chores
+- [`fe291d0`](https://github.com/leventekk/orcaexport/commit/fe291d0713f970cbcb11559b6541719be8a42a57) - update release package management *(commit by [@leventekk](https://github.com/leventekk))*
+- [`97b4423`](https://github.com/leventekk/orcaexport/commit/97b4423629b5e9919fd5a1a591ea7bf818ad6374) - update logo *(commit by [@leventekk](https://github.com/leventekk))*
+- [`31c3aad`](https://github.com/leventekk/orcaexport/commit/31c3aad0daf1ccb3bcb9a073d430e2d09fb76a7b) - introduce husky with lint-staged *(commit by [@leventekk](https://github.com/leventekk))*
+- [`879f434`](https://github.com/leventekk/orcaexport/commit/879f43493807b316816cc892cade70d0060dbe0f) - bump version to 0.2.0 *(commit by [@leventekk](https://github.com/leventekk))*
+- [`87935b1`](https://github.com/leventekk/orcaexport/commit/87935b12e5eb94d68960671417161deee8976fe9) - bump version to 0.2.1 *(commit by [@leventekk](https://github.com/leventekk))*
+- [`56d845e`](https://github.com/leventekk/orcaexport/commit/56d845e6a462a5a4d0bec30c725a5afed0720f62) - update readme, add screenshots *(commit by [@leventekk](https://github.com/leventekk))*
+- [`e2a8bb0`](https://github.com/leventekk/orcaexport/commit/e2a8bb0ee85bce6f0bca26fed589a03526e0ac2b) - bump version to 0.2.2 *(commit by [@leventekk](https://github.com/leventekk))*
+- [`b181b7d`](https://github.com/leventekk/orcaexport/commit/b181b7df7f7a0e7a5c51b398f52d0e301ddd1a86) - bump version to 0.2.2 *(commit by [@leventekk](https://github.com/leventekk))*
+
+
 ## [v0.2.2] - 2025-02-16
 ### :bug: Bug Fixes
 - [`ece8f60`](https://github.com/leventekk/orcaexport/commit/ece8f60f7346d1dc004cd61e5e1a053a47197194) - **app**: update versioning, add prevent plugin *(commit by [@leventekk](https://github.com/leventekk))*
@@ -40,3 +57,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.1.4]: https://github.com/leventekk/orcaexport/compare/v0.1.3...v0.1.4
 [v0.2.1]: https://github.com/leventekk/orcaexport/compare/v0.2.0...v0.2.1
 [v0.2.2]: https://github.com/leventekk/orcaexport/compare/v0.2.1...v0.2.2
+[v0.2.0]: https://github.com/leventekk/orcaexport/compare/v0.1.4...v0.2.0
