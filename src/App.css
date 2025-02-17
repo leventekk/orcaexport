@@ -95,6 +95,8 @@
     --tooltip-background: var(--color-primary);
     --tooltip-content: var(--color-neutral);
 
+    --default-bezier-transition: cubic-bezier(0.4, 0, 0.2, 1);
+
     font-family: var(--default-font-family);
     font-size: 16px;
     font-weight: 400;

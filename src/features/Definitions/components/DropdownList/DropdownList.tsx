@@ -1,4 +1,6 @@
 import { Button } from "@component/Button/Button";
+import { IconButton } from "@component/IconButton/IconButton";
+import { XMarkIcon } from "@component/Icons/XMark";
 import { useDropdownList } from "@feature/Definitions/hooks/use-dropdown-list";
 import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import styles from "./dropdown-list.module.css";
@@ -19,24 +21,22 @@ export function DropdownList(props: Props) {
 
   return (
     <>
-      <div className={styles.root}>
-        {files.map(({ title, type, entries }) => (
-          <dl className={styles.list} key={type}>
-            <dt className={styles.title}>{title}</dt>
-            {entries.map((entry) => (
-              <dd className={styles.entry} key={entry.path}>
-                <button
-                  type="button"
-                  className={styles.remove}
-                  onClick={() => removeFile(entry)}
-                >
-                  {entry.name}
-                </button>
-              </dd>
-            ))}
-          </dl>
+      <ul className={styles.root}>
+        {files.map(({ title, type, name, path }) => (
+          <li className={styles.entry} key={name + type}>
+            <div>
+              <div className={styles.title}>{name}</div>
+              <div className={styles.subTitle}>{title}</div>
+            </div>
+            <IconButton
+              onClick={() => removeFile({ type, name, path })}
+              variant="danger"
+            >
+              <XMarkIcon />
+            </IconButton>
+          </li>
         ))}
-      </div>
+      </ul>
       {hasFiles && (
         <div className={styles.footer}>
           <Button onClick={handleReset} variant="danger">

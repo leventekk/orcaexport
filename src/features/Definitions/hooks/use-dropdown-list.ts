@@ -12,14 +12,12 @@ export function useDropdownList(props: Props) {
   const { files: filesToExport, downloadFiles, reset } = useExporter();
 
   const files = useMemo(() => {
-    const list = Object.groupBy(filesToExport, (file) => file.type);
+    return filesToExport.map((file) => {
+      const type = toConfigType(file.type);
 
-    return Object.entries(list).map(([_type, entries]) => {
-      const type = toConfigType(_type);
       return {
         title: formatTitle(type),
-        type,
-        entries,
+        ...file,
       };
     });
   }, [filesToExport]);
@@ -33,8 +31,8 @@ export function useDropdownList(props: Props) {
 
     toast.promise(
       async () => {
-        await downloadFiles();
         props.onClose();
+        await downloadFiles();
       },
       {
         loading: "Processing files...",
@@ -45,8 +43,8 @@ export function useDropdownList(props: Props) {
   }, [downloadFiles, filesToExport, props.onClose]);
 
   const handleReset = useCallback(() => {
-    reset();
     props.onClose();
+    reset();
   }, [props.onClose, reset]);
 
   const hasFiles = filesToExport.length > 0;

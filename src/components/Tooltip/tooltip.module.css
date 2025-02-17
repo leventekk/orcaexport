@@ -44,8 +44,8 @@
       mask-position: -1px 0;
       mask-repeat: no-repeat;
       mask-image: var(--mask-tooltip);
-      transition: opacity .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms, transform .2s
-        cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+      transition: opacity .2s var(--default-bezier-transition) 75ms, transform
+        .2s var(--default-bezier-transition) 75ms;
       display: block;
       position: absolute;
       transform: translate(-50%) translateY(var(--state-position));
@@ -54,8 +54,8 @@
 
     &::before,
     &::after {
-      transition: opacity .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms, transform .2s
-        cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+      transition: opacity .2s var(--default-bezier-transition) 75ms, transform
+        .2s var(--default-bezier-transition) 75ms;
     }
   }
 }

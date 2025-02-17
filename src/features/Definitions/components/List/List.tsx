@@ -1,3 +1,4 @@
+import { IconButton } from "@component/IconButton/IconButton";
 import { PlusIcon } from "@component/Icons/Plus";
 import { XMarkIcon } from "@component/Icons/XMark";
 import { Tooltip } from "@component/Tooltip/Tooptip";
@@ -31,16 +32,12 @@ export function List(props: Props) {
           <span>{entry.name}</span>
 
           <Tooltip title={entry.selected ? "Remove" : "Add"}>
-            <button
-              type="button"
-              className={cn(styles.button, {
-                [styles.buttonSelected]: entry.selected,
-                [styles.buttonDefault]: !entry.selected,
-              })}
+            <IconButton
               onClick={() => (entry.selected ? onRemove(entry) : onAdd(entry))}
+              variant={entry.selected ? "danger" : "default"}
             >
               {entry.selected ? <XMarkIcon /> : <PlusIcon />}
-            </button>
+            </IconButton>
           </Tooltip>
         </li>
       ))}

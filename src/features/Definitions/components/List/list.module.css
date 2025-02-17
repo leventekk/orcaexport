@@ -20,31 +20,4 @@
   .entrySelected {
     background: color-mix(in oklab, var(--color-base-content) 2%, transparent);
   }
-
-  .button {
-    width: 2rem;
-    height: 2rem;
-    display: grid;
-    place-items: center;
-    padding: 0;
-    background: none;
-    border-radius: var(--default-corner-radius);
-    border: 1px solid var(--button-default-border);
-    transition: backgrond-color .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
-  }
-
-  .buttonDefault {
-    &:hover {
-      background-color: var(--button-background-success);
-    }
-  }
-
-  .buttonSelected {
-    background-color: var(--button-background-danger);
-  }
-
-  .selected {
-    padding-inline-start: 1.25rem;
-    background-color: var(--color-neutral-300);
-  }
 }

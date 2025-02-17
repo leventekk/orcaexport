@@ -1,11 +1,17 @@
 @layer components {
   .root {
+    --state-opacity: 0;
+    --state-position: 15px;
+    --state-pointer-events: none;
+
     position: relative;
     display: flex;
     gap: 1rem;
 
-    &:has(input:checked) .popup {
-      display: flex;
+    &:has(input:checked) {
+      --state-opacity: 1;
+      --state-position: 0px;
+      --state-pointer-events: all;
     }
   }
 
@@ -17,13 +23,18 @@
     position: absolute;
     top: 100%;
     right: 0;
+    opacity: var(--state-opacity);
     background-color: var(--color-neutral-50);
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 18rem;
     padding: 1rem;
-    border-radius: .75rem;
+    border-radius: var(--default-corner-radius);
     box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
+    pointer-events: var(--state-pointer-events);
+    transform: translateY(calc(10px + var(--state-position)));
+    transition: opacity .2s var(--default-bezier-transition) 75ms, transform .2s
+      var(--default-bezier-transition) 75ms;
   }
 
   .icon {

@@ -1,0 +1,33 @@
+@layer components {
+  .root {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background: none;
+    border-radius: var(--default-corner-radius);
+    border: 1px solid var(--border-color);
+    transition: background-color .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+  }
+
+  .default {
+    --border-color: var(--button-default-border);
+
+    &:hover {
+      background-color: var(--button-background-success);
+    }
+  }
+
+  .danger {
+    background-color: var(--button-background-danger);
+
+    &:hover {
+      background-color: color-mix(
+        in oklab,
+        var(--button-background-danger) 65%,
+        transparent
+      );
+    }
+  }
+}
