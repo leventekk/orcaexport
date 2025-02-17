@@ -2,7 +2,7 @@ import cn from "classnames";
 import type { SVGAttributes } from "react";
 import styles from "./icon.module.css";
 
-export function ListAltIcon(props: SVGAttributes<SVGElement>) {
+export function XMarkIcon(props: SVGAttributes<SVGElement>) {
   const { className, ...rest } = props;
   return (
     <svg
@@ -16,7 +16,7 @@ export function ListAltIcon(props: SVGAttributes<SVGElement>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M8 8h12m-9 4h9m-6 4h6M4 8h.01M7 12h.01M10 16h.01"
+        d="m6 6 12 12m0-12L6 18"
       />
     </svg>
   );

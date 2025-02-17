@@ -5,21 +5,42 @@
     list-style: none;
   }
 
-  .button {
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-    position: relative;
-    display: block;
-    transition: background-color .2s, padding-inline-start .2s;
-    appearance: none;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
+  .entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 
-    &:hover {
-      background-color: var(--color-neutral-200);
+    + & {
+      border-top: 1px solid
+        color-mix(in oklab, var(--color-base-content) 5%, transparent);
     }
+  }
+
+  .entrySelected {
+    background: color-mix(in oklab, var(--color-base-content) 2%, transparent);
+  }
+
+  .button {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    background: none;
+    border-radius: var(--default-corner-radius);
+    border: 1px solid var(--button-default-border);
+    transition: backgrond-color .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+  }
+
+  .buttonDefault {
+    &:hover {
+      background-color: var(--button-background-success);
+    }
+  }
+
+  .buttonSelected {
+    background-color: var(--button-background-danger);
   }
 
   .selected {

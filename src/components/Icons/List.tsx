@@ -1,18 +1,16 @@
+import cn from "classnames";
 import type { SVGAttributes } from "react";
 import styles from "./icon.module.css";
 
 export function ListIcon(props: SVGAttributes<SVGElement>) {
+  const { className, ...rest } = props;
   return (
     <svg
-      className={styles.root}
-      width={800}
-      height={800}
+      className={cn(styles.root, className)}
       fill="none"
       viewBox="0 0 24 24"
-      {...props}
+      {...rest}
     >
-      <title>List</title>
-
       <path
         className={styles.stroke}
         strokeLinecap="round"

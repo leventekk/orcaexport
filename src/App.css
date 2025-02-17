@@ -79,11 +79,28 @@
     --color-primary: oklch(0.511 0.262 276.966);
     --color-red-400: oklch(0.514 0.222 16.935);
 
+    --color-base-content: oklch(0% 0 0);
+    --color-primary: oklch(15.906% 0 0);
+
+    --color-neutral: oklch(100% 0 0);
+
+    --color-success: oklch(90.13% 0.153 164.14);
+    --color-error: oklch(78.66% 0.15 28.47);
+
+    --default-corner-radius: 0.35rem;
+    --button-default-border: var(--color-neutral-200);
+
+    --button-background-success: var(--color-success);
+    --button-background-danger: var(--color-error);
+
+    --tooltip-background: var(--color-primary);
+    --tooltip-content: var(--color-neutral);
+
     font-family: var(--default-font-family);
     font-size: 16px;
     font-weight: 400;
 
-    color: var(--color-neutral-950);
+    color: var(--color-base-content);
     background-color: var(--color-neutral-100);
 
     font-synthesis: none;
