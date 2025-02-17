@@ -9,6 +9,7 @@
     border-radius: var(--default-corner-radius);
     border: 1px solid var(--border-color);
     transition: all .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+    cursor: pointer;
 
     &:hover {
       border-color: var(--hover-border-color);

@@ -43,6 +43,7 @@
     background: none;
     color: var(--color-neutral-50);
     transition: opacity ease-in 300ms;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.5;

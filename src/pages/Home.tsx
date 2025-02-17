@@ -1,17 +1,18 @@
-import { Accordion } from "@component/Accordion/Accordion";
 import { EmptyState } from "@component/EmptyState/EmptyState";
+import { Tab } from "@component/Tab/Tab";
 import { List as DefinitionList } from "@feature/Definitions/components/List/List";
 import { useExporter } from "@feature/Exporter/hooks/use-exporter";
+import { Fragment } from "react/jsx-runtime";
 import { useHome } from "./hooks/use-home";
 
 export function Home() {
   const { addFile, removeFile } = useExporter();
-  const { definitions } = useHome();
+  const { definitions, tabMenus } = useHome();
 
   return (
-    <>
-      {definitions.map(({ title, type, entries, hasSelected }) => (
-        <Accordion key={title} title={title} highlighted={hasSelected}>
+    <Tab menus={tabMenus}>
+      {definitions.map(({ type, entries }) => (
+        <Fragment key={type}>
           {entries.length === 0 ? (
             <EmptyState />
           ) : (
@@ -21,8 +22,8 @@ export function Home() {
               onRemove={(props) => removeFile({ ...props, type })}
             />
           )}
-        </Accordion>
+        </Fragment>
       ))}
-    </>
+    </Tab>
   );
 }

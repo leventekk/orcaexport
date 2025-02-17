@@ -67,14 +67,6 @@
     --color-neutral-50: oklch(0.985 0 0);
     --color-neutral-100: oklch(0.97 0 0);
     --color-neutral-200: oklch(0.922 0 0);
-    --color-neutral-300: oklch(0.87 0 0);
-    --color-neutral-400: oklch(0.708 0 0);
-    --color-neutral-500: oklch(0.556 0 0);
-    --color-neutral-600: oklch(0.439 0 0);
-    --color-neutral-700: oklch(0.371 0 0);
-    --color-neutral-800: oklch(0.269 0 0);
-    --color-neutral-900: oklch(0.205 0 0);
-    --color-neutral-950: oklch(0.145 0 0);
 
     --color-base-content: oklch(0% 0 0);
     --color-primary: oklch(15.906% 0 0);
@@ -87,6 +79,11 @@
     --default-background-color: oklch(100% 0 0);
 
     --default-corner-radius: 0.35rem;
+
+    --tab-header-background: var(--color-neutral-200);
+    --tab-active-foreground: var(--color-base-content);
+    --tab-active-background: var(--color-neutral);
+
     --button-default-border: var(--color-neutral-200);
 
     --button-default-background: var(--color-neutral-200);
@@ -97,6 +94,8 @@
     --tooltip-content: var(--color-neutral);
 
     --default-bezier-transition: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --header-height: 6.5rem;
 
     font-family: var(--default-font-family);
     font-size: 16px;

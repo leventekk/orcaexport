@@ -8,11 +8,11 @@
     position: sticky;
     top: 0;
     z-index: 1;
-    height: 6.5rem;
+    height: var(--header-height);
   }
 
   .title {
     margin-block-start: 0;
-    color: var(--color-neutral-50);
+    color: var(--color-neutral);
   }
 }
