@@ -2,7 +2,7 @@
   .root {
     position: relative;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 
     &:has(input:checked) .popup {
       display: flex;
@@ -28,6 +28,7 @@
 
   .icon {
     border: none;
+    padding: 0;
     background: none;
     color: var(--color-neutral-50);
     transition: opacity ease-in 300ms;
