@@ -30,7 +30,8 @@ export function DropdownList(props: Props) {
             </div>
             <IconButton
               onClick={() => removeFile({ type, name, path })}
-              variant="danger"
+              variant="outlined"
+              color="danger"
             >
               <XMarkIcon />
             </IconButton>

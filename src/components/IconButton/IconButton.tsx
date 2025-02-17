@@ -3,17 +3,21 @@ import type { ButtonHTMLAttributes, PropsWithChildren } from "react";
 import styles from "./icon-button.module.css";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "danger";
+  variant?: "outlined" | "filled";
+  color?: "default" | "success" | "danger";
 }
 
 export function IconButton(props: PropsWithChildren<Props>) {
-  const { variant = "default", ...rest } = props;
+  const { color = "default", variant = "filled", ...rest } = props;
+
   return (
     <button
       type="button"
       className={cn(styles.root, {
-        [styles.danger]: variant === "danger",
-        [styles.default]: variant === "default",
+        [styles.filled]: variant === "filled",
+        [styles.outlined]: variant === "outlined",
+        [styles.danger]: color === "danger",
+        [styles.default]: color === "default",
       })}
       {...rest}
     />

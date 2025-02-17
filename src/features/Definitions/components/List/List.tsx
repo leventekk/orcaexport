@@ -34,7 +34,8 @@ export function List(props: Props) {
           <Tooltip title={entry.selected ? "Remove" : "Add"}>
             <IconButton
               onClick={() => (entry.selected ? onRemove(entry) : onAdd(entry))}
-              variant={entry.selected ? "danger" : "default"}
+              variant={entry.selected ? "filled" : "outlined"}
+              color={entry.selected ? "danger" : "default"}
             >
               {entry.selected ? <XMarkIcon /> : <PlusIcon />}
             </IconButton>

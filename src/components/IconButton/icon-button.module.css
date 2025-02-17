@@ -5,29 +5,51 @@
     display: grid;
     place-items: center;
     padding: 0;
-    background: none;
+    background: var(--background-color);
     border-radius: var(--default-corner-radius);
     border: 1px solid var(--border-color);
-    transition: background-color .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+    transition: all .2s cubic-bezier(0.4, 0, 0.2, 1) 75ms;
+
+    &:hover {
+      border-color: var(--hover-border-color);
+      background-color: var(--hover-background-color);
+    }
+  }
+
+  .outlined {
+    --border-color: var(--state-border-color);
+    --hover-border-color: var(--state-hover-border-color, var(--border-color));
+    --hover-background-color: var(--state-hover-background-color);
+  }
+
+  .filled {
+    --border-color: transparent;
+    --hover-border-color: transparent;
+    --background-color: var(--state-background-color);
+    --hover-background-color: var(--state-hover-background-color);
   }
 
   .default {
-    --border-color: var(--button-default-border);
+    --state-border-color: var(--button-default-border);
+    --state-background-color: var(--button-default-background);
+    --state-hover-background-color: var(--button-default-background);
+  }
 
-    &:hover {
-      background-color: var(--button-background-success);
-    }
+  .success {
+    --state-border-color: var(--button-default-border);
+    --state-background-color: var(--hover-background-color);
+    --state-hover-background-color: var(--hover-background-color);
   }
 
   .danger {
-    background-color: var(--button-background-danger);
+    --state-border-color: var(--button-default-border);
+    --state-hover-border-color: var(--button-background-danger);
 
-    &:hover {
-      background-color: color-mix(
-        in oklab,
-        var(--button-background-danger) 65%,
-        transparent
-      );
-    }
+    --state-background-color: var(--button-background-danger);
+    --state-hover-background-color: color-mix(
+      in oklab,
+      var(--button-background-danger) 65%,
+      transparent
+    );
   }
 }

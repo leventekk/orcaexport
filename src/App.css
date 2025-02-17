@@ -89,6 +89,7 @@
     --default-corner-radius: 0.35rem;
     --button-default-border: var(--color-neutral-200);
 
+    --button-default-background: var(--color-neutral-200);
     --button-background-success: var(--color-success);
     --button-background-danger: var(--color-error);
 
