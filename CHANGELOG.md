@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.3.0] - 2025-02-17
+### :sparkles: New Features
+- [`abea025`](https://github.com/leventekk/orcaexport/commit/abea0254cd39cbd6f732930643373a08f99b4d2a) - enable devtools in debug mode *(commit by [@leventekk](https://github.com/leventekk))*
+- [`bf331a7`](https://github.com/leventekk/orcaexport/commit/bf331a7a9ee6608cb18c6fedf86de985b1eb3cb3) - make list more dense *(commit by [@leventekk](https://github.com/leventekk))*
+- [`0c7a2d8`](https://github.com/leventekk/orcaexport/commit/0c7a2d84d84bdd920acc4302dce5f752596a557e) - update header icons *(commit by [@leventekk](https://github.com/leventekk))*
+- [`2a4a789`](https://github.com/leventekk/orcaexport/commit/2a4a7898b815ea5ada719f5619b1c4017bd4adaf) - update header layout *(commit by [@leventekk](https://github.com/leventekk))*
+- [`ccf360b`](https://github.com/leventekk/orcaexport/commit/ccf360b87013e07c12260574b31ad0481ee666b2) - improve list of exports layout *(commit by [@leventekk](https://github.com/leventekk))*
+- [`41b6fb3`](https://github.com/leventekk/orcaexport/commit/41b6fb3cb3839cf199bd63e6bc6c17ae303894a7) - **button**: extend button variants and colors *(commit by [@leventekk](https://github.com/leventekk))*
+- [`5dcb039`](https://github.com/leventekk/orcaexport/commit/5dcb0394db42ffe5dc020ef8473ff86d7822d8d5) - **home**: replace accordion with tabs *(commit by [@leventekk](https://github.com/leventekk))*
+
+### :wrench: Chores
+- [`5e4ff6e`](https://github.com/leventekk/orcaexport/commit/5e4ff6e76d2392b28cf674ee96ee9ed1bf23bdf3) - use spaces *(commit by [@leventekk](https://github.com/leventekk))*
+- [`637f0d3`](https://github.com/leventekk/orcaexport/commit/637f0d3c9d51220a3643aa3b0752d1012525f81c) - bump version to 0.3.0 *(commit by [@leventekk](https://github.com/leventekk))*
+
+
 ## [v0.2.1] - 2025-02-16
 ### :bug: Bug Fixes
 - [`ae0f4b7`](https://github.com/leventekk/orcaexport/commit/ae0f4b75660c449092caa78528c54ac4fd2ae46c) - **build**: fix aarch64 broken binary *(commit by [@leventekk](https://github.com/leventekk))*
@@ -67,3 +82,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.2.2]: https://github.com/leventekk/orcaexport/compare/v0.2.1...v0.2.2
 [v0.2.0]: https://github.com/leventekk/orcaexport/compare/v0.1.4...v0.2.0
 [v0.2.1]: https://github.com/leventekk/orcaexport/compare/v0.2.0...v0.2.1
+[v0.3.0]: https://github.com/leventekk/orcaexport/compare/v0.2.1...v0.3.0
