@@ -1,5 +1,5 @@
-import { ListIcon } from "@component/Icons/List";
-import { ListAltIcon } from "@component/Icons/ListAlt";
+import { MessageIcon } from "@component/Icons/Message";
+import { MessageListIcon } from "@component/Icons/MessageList";
 import { RefreshIcon } from "@component/Icons/Refresh";
 import { DropdownList } from "@feature/Definitions/components/DropdownList/DropdownList";
 import styles from "./actions.module.css";
@@ -15,7 +15,7 @@ export function Actions() {
         <RefreshIcon />
       </button>
       <label className={styles.icon}>
-        {hasFiles ? <ListIcon /> : <ListAltIcon />}
+        {hasFiles ? <MessageListIcon /> : <MessageIcon />}
         <input className={styles.input} type="checkbox" ref={inputRef} />
       </label>
 

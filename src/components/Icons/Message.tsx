@@ -2,7 +2,7 @@ import cn from "classnames";
 import type { SVGAttributes } from "react";
 import styles from "./icon.module.css";
 
-export function ListIcon(props: SVGAttributes<SVGElement>) {
+export function MessageIcon(props: SVGAttributes<SVGElement>) {
   const { className, ...rest } = props;
   return (
     <svg
@@ -16,7 +16,7 @@ export function ListIcon(props: SVGAttributes<SVGElement>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="m8 6 13 .001m-13 6h13m-13 6h13M3.5 6h.01m-.01 6h.01m-.01 6h.01M4 6a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 6a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 6a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+        d="M21.004 12a9 9 0 0 1-9 9h-9s1.56-3.744.936-5a9 9 0 1 1 17.064-4Z"
       />
     </svg>
   );
