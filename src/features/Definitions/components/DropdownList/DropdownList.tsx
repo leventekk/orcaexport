@@ -4,47 +4,47 @@ import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import styles from "./dropdown-list.module.css";
 
 interface Props {
-	onClose: () => void;
+  onClose: () => void;
 }
 
 export function DropdownList(props: Props) {
-	const { hasFiles, files, handleExport, handleReset } = useDropdownList(props);
-	const { removeFile } = useExporter();
+  const { hasFiles, files, handleExport, handleReset } = useDropdownList(props);
+  const { removeFile } = useExporter();
 
-	if (!hasFiles) {
-		return (
-			<div className={styles.feedback}>No files has been selected yet!</div>
-		);
-	}
+  if (!hasFiles) {
+    return (
+      <div className={styles.feedback}>No files has been selected yet!</div>
+    );
+  }
 
-	return (
-		<>
-			<div className={styles.root}>
-				{files.map(({ title, type, entries }) => (
-					<dl className={styles.list} key={type}>
-						<dt className={styles.title}>{title}</dt>
-						{entries.map((entry) => (
-							<dd className={styles.entry} key={entry.path}>
-								<button
-									type="button"
-									className={styles.remove}
-									onClick={() => removeFile(entry)}
-								>
-									{entry.name}
-								</button>
-							</dd>
-						))}
-					</dl>
-				))}
-			</div>
-			{hasFiles && (
-				<div className={styles.footer}>
-					<Button onClick={handleReset} variant="danger">
-						Reset
-					</Button>
-					<Button onClick={handleExport}>Export</Button>
-				</div>
-			)}
-		</>
-	);
+  return (
+    <>
+      <div className={styles.root}>
+        {files.map(({ title, type, entries }) => (
+          <dl className={styles.list} key={type}>
+            <dt className={styles.title}>{title}</dt>
+            {entries.map((entry) => (
+              <dd className={styles.entry} key={entry.path}>
+                <button
+                  type="button"
+                  className={styles.remove}
+                  onClick={() => removeFile(entry)}
+                >
+                  {entry.name}
+                </button>
+              </dd>
+            ))}
+          </dl>
+        ))}
+      </div>
+      {hasFiles && (
+        <div className={styles.footer}>
+          <Button onClick={handleReset} variant="danger">
+            Reset
+          </Button>
+          <Button onClick={handleExport}>Export</Button>
+        </div>
+      )}
+    </>
+  );
 }

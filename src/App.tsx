@@ -4,17 +4,17 @@ import { Header } from "./components/Header/Header";
 import { Home } from "./pages/Home";
 
 function App() {
-	return (
-		<div className="container">
-			<Header />
+  return (
+    <div className="container">
+      <Header />
 
-			<main>
-				<Home />
+      <main>
+        <Home />
 
-				<Toaster position="bottom-right" />
-			</main>
-		</div>
-	);
+        <Toaster position="bottom-right" />
+      </main>
+    </div>
+  );
 }
 
 export default App;

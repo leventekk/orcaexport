@@ -5,24 +5,24 @@ import { useExporter } from "@feature/Exporter/hooks/use-exporter";
 import { useHome } from "./hooks/use-home";
 
 export function Home() {
-	const { addFile, removeFile } = useExporter();
-	const { definitions } = useHome();
+  const { addFile, removeFile } = useExporter();
+  const { definitions } = useHome();
 
-	return (
-		<>
-			{definitions.map(({ title, type, entries, hasSelected }) => (
-				<Accordion key={title} title={title} highlighted={hasSelected}>
-					{entries.length === 0 ? (
-						<EmptyState />
-					) : (
-						<DefinitionList
-							entries={entries}
-							onAdd={(props) => addFile({ ...props, type })}
-							onRemove={(props) => removeFile({ ...props, type })}
-						/>
-					)}
-				</Accordion>
-			))}
-		</>
-	);
+  return (
+    <>
+      {definitions.map(({ title, type, entries, hasSelected }) => (
+        <Accordion key={title} title={title} highlighted={hasSelected}>
+          {entries.length === 0 ? (
+            <EmptyState />
+          ) : (
+            <DefinitionList
+              entries={entries}
+              onAdd={(props) => addFile({ ...props, type })}
+              onRemove={(props) => removeFile({ ...props, type })}
+            />
+          )}
+        </Accordion>
+      ))}
+    </>
+  );
 }

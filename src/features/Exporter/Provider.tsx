@@ -3,12 +3,12 @@ import { ExporterContext, initialState } from "./context";
 import { exporterReducer } from "./reducer";
 
 export function ExporterProvider(props: PropsWithChildren) {
-	const [state, dispatch] = useReducer(exporterReducer, initialState);
-	const context = { state, dispatch };
+  const [state, dispatch] = useReducer(exporterReducer, initialState);
+  const context = { state, dispatch };
 
-	return (
-		<ExporterContext.Provider value={context}>
-			{props.children}
-		</ExporterContext.Provider>
-	);
+  return (
+    <ExporterContext.Provider value={context}>
+      {props.children}
+    </ExporterContext.Provider>
+  );
 }

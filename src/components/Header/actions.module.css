@@ -1,40 +1,40 @@
 @layer components {
-	.root {
-		position: relative;
-		display: flex;
+  .root {
+    position: relative;
+    display: flex;
 
-		&:has(input:checked) .popup {
-			display: flex;
-		}
-	}
+    &:has(input:checked) .popup {
+      display: flex;
+    }
+  }
 
-	.input {
-		display: none;
-	}
+  .input {
+    display: none;
+  }
 
-	.popup {
-		position: absolute;
-		top: 100%;
-		right: 0;
-		background-color: var(--color-neutral-50);
-		display: none;
-		flex-direction: column;
-		width: 18rem;
-		padding: 1rem;
-		border-radius: .75rem;
-		box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
-	}
+  .popup {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-neutral-50);
+    display: none;
+    flex-direction: column;
+    width: 18rem;
+    padding: 1rem;
+    border-radius: .75rem;
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
+  }
 
-	.icon {
-		border: none;
-		width: 2.4rem;
-		height: 2.4rem;
-		background: none;
-		color: var(--color-neutral-50);
-		transition: opacity ease-in 300ms;
+  .icon {
+    border: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: none;
+    color: var(--color-neutral-50);
+    transition: opacity ease-in 300ms;
 
-		&:hover {
-			opacity: 0.5;
-		}
-	}
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
